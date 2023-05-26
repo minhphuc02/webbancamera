@@ -1,0 +1,59 @@
+﻿@model IEnumerable<laptrinhwed_chieut4_doan.Models.GioHang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Tên Camera
+        </th>
+        <th>
+            Hình
+        </th>
+        <th>
+            Giá Bán
+        </th>
+        <th>
+            Số Lượng Mua
+        </th>
+        <th>
+            Thành Tiền
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.tencam)</td>
+            <td> <img src="@item.hinh" width="180" alt="Alternate Text" /> </td>
+            @using (Html.BeginForm("CapnhatGiohang", "GioHang", new { @id = item.macam }))
+            {
+                <td> @String.Format("{0:0,0}", item.giaban) VNĐ  </td>
+                <td> <input type="number" min="1" name="txtSoLg" value="@item.iSoluong" /></td>
+                <td> @Html.DisplayFor(modelItem => item.dThanhtien) </td>
+                <td> <a href="@Url.Action("Detail", "Camera", new { id = item.macam })"> Chi tiết </a> | @Html.ActionLink("Xóa", "XoaGiohang", new { @id = item.macam })</td>
+                <td> <input type="submit" name="name" value="Cập nhật" class="btn btn-success" /> </td>
+            }
+        </tr>
+    }
+    <tr style="font-weight: bold; text-align: left ; color:red">
+        <td colspan="2"> Số loại camera:@ViewBag.Tongsoluongsanpham </td>
+        <td colspan="2"> Số lượng camera:@ViewBag.Tongsoluong </td>
+        <td colspan="4"> Tổng tiền: @String.Format("{0:0,0}", @ViewBag.Tongtien) VNĐ </td>
+    </tr>
+    <tr style="font-weight: bold; text-align: right ; color:blue">
+        <td colspan="5">
+            @Html.ActionLink("Xóa giỏ hàng", "XoaTatCaGiohang")
+        </td>
+    </tr>
+    <tr style="font-weight: bold; text-align: right ; color:yellow">
+        <td colspan="5">
+            @Html.ActionLink("Đặt hàng", "DatHang")
+        </td>
+    </tr>
+</table>
+

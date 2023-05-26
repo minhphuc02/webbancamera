@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MyData">
+  <DataContextMoniker Name="/MyDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6bdd9c75-32d0-4b0b-8c2b-d85637856102" absoluteBounds="0.75, 1.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/MyDataDataContext/LoaiCamera" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df732143-292a-4625-bd96-e179a4076ac7" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01e93332-ef44-4c07-bdf2-5b6f794dae4f" absoluteBounds="0.75, 4.875, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/MyDataDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb2fb8f6-2620-4411-b14d-7e3153e5dcb7" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="749fdf43-4bf6-48c5-85e4-395696672760" absoluteBounds="3.5, 5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/MyDataDataContext/DonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d226bc4-6b9e-4946-800f-b53da4fcfa2b" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6dce9dff-987b-462e-9f87-53392b4b64ad" absoluteBounds="6.25, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MyDataDataContext/ChiTietDonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b43e421-269b-45f8-841b-ce7c0e324d59" absoluteBounds="6.265, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6626c97-f408-43d1-9dfb-8786aebc1a63" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MyDataDataContext/Camera" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b0efa84-95aa-4bf5-a6a3-e9ef5571625a" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.98159912109375); (3.5 : 5.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyDataDataContext/KhachHang/KhachHang_DonHang" />
+      <nodes>
+        <classShapeMoniker Id="01e93332-ef44-4c07-bdf2-5b6f794dae4f" />
+        <classShapeMoniker Id="749fdf43-4bf6-48c5-85e4-395696672760" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.98159912109375); (7.25 : 5.98159912109375); (7.25 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyDataDataContext/DonHang/DonHang_ChiTietDonHang" />
+      <nodes>
+        <classShapeMoniker Id="749fdf43-4bf6-48c5-85e4-395696672760" />
+        <classShapeMoniker Id="6dce9dff-987b-462e-9f87-53392b4b64ad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyDataDataContext/Camera/Camera_ChiTietDonHang" />
+      <nodes>
+        <classShapeMoniker Id="b6626c97-f408-43d1-9dfb-8786aebc1a63" />
+        <classShapeMoniker Id="6dce9dff-987b-462e-9f87-53392b4b64ad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.97199625651042); (3.5 : 1.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyDataDataContext/LoaiCamera/LoaiCamera_Camera" />
+      <nodes>
+        <classShapeMoniker Id="6bdd9c75-32d0-4b0b-8c2b-d85637856102" />
+        <classShapeMoniker Id="b6626c97-f408-43d1-9dfb-8786aebc1a63" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

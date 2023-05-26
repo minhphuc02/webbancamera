@@ -1,0 +1,73 @@
+﻿@model laptrinhwed_chieut4_doan.Camera
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XÓA Camera</h2>
+
+<h3>Bạn có chắc chắn muốn xóa sản phẩm này không?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maloai)
+        </dd>
+
+        <dt>
+            Tên Camera
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tencam)
+        </dd>
+
+        <dt>
+            Hình
+        </dt>
+
+        <dd>
+            <img src="@Model.hinh" width="190" height="290" " />
+        </dd>
+
+        <dt>
+            Giá Bán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giaban)
+        </dd>
+
+        <dt>
+            Ngày Cập Nhật
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaycapnhat)
+        </dd>
+
+        <dt>
+            Số Lượng Tồn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluongton)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListCamera")
+        </div>
+    }
+</div>
